@@ -1,0 +1,24 @@
+{
+  "version": 3,
+  "name": "KrakenD API Gateway",
+  "port": 8080,
+  "endpoints": [
+    {
+      "endpoint": "/example",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/",
+          "host": [
+            "http://httpbin.org"
+          ],
+          "extra_config": {
+            "github.com/devopsfaith/krakend/proxy": {
+              "disable_json_validation": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
